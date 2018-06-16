@@ -28,3 +28,16 @@ These problems are aimed at high school students, ideally those who are taking, 
 I hope you enjoy and please feel free to add commits or point out errors.
 
 To encourage truly deep thought, as well as group collaboration, solutions are not provided!
+
+
+## More Readings and Resources
+
+For those interested in discovering more math
+
+1. [Quanta Magazine](https://www.quantamagazine.org/mathematics/): A scientific online publication. Pretty in-depth articles with a 
+slight emphasis toward pure mathematics. 
+2. [How to Solve It, Polya](https://docs.google.com/viewer?url=https%3A%2F%2Fmath.hawaii.edu%2Fhome%2Fpdf%2Fputnam%2FPolyaHowToSolveIt.pdf):
+A well-known short text on problem solving by Polya.
+3. [EdX](https://www.edx.org/course/subject/math): A Massive Open Online Course (MOOC) provider. Wide range of classes and subjects offered by
+an equally wide breadth of universities and institutions
+4. [Coursera](https://www.coursera.org/browse/math-and-logic): Another MOOC. Also great.
