@@ -1,0 +1,240 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  A Math Filled Summer! \\
+  \large Part 1}
+\author{Charles Yang }
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\begin{document}
+
+\maketitle
+\begin{center}
+    \section*{Unit References and Conversions}
+    $10^{12}$ = trillion\\
+    $10^9$ = billion\\
+    $10^6$ = million\\
+    $10^3$ = thousand(k)\\
+    $10^{-2}$ = centi (c)\\
+    $10^{-3}$ = milli (m)\\
+    $10^{-6}$ = micro ($\mu$)\\
+    $10^{-9}$ = nano (n)\\
+    1000L of water = 1 $m^3$\\
+    1L of water = 1 kg\\
+    
+    
+    \section*{Problem-Solving Philosophy}
+    Immerse in the known\\
+    Ponder the unknown\\
+    Expand into the bounds\\
+    A symbol is better than a number\\
+    An exact number is better than an approximate number\\
+    An approximate number is better than nothing\\
+    Sanity checks are for the sane\\
+    
+    
+\end{center}
+
+\newpage
+
+\section{Linear Algebra}
+
+
+\begin{enumerate}
+
+    \item Polynomial Expansion
+    \begin{enumerate}
+        \item Prove the simplified form of (a+b)(c+d), writing out each step
+        \item What nice property of multiplication allows us to simplify this equation?\\
+        Believe it or not, there are many fields of math where this does not hold true, with important consequences!
+        \item Prove the simplified form of (a+b+c)(d+e+f), writing out each step
+        \item How many more steps(where 1 step is a multiplication or addition operation) did you have to do compared to above?
+        \item For ($a_1$ + $a_2$ + ... + $a_i$)($b_1$ + $b_2$ + ... + $b_i$),where $a_i$,$b_i$ are all independent variables, how many steps would you need? 
+    \end{enumerate}
+    
+    \item Equation Systems
+    \begin{enumerate} 
+        \item  Solve the following linear system of equations. Take note of what type of operations you performed.
+        \[ 2x - 1 = y + z  \]
+        \[ y-z = 1  \]
+        \[ x+y+z = 3  \]
+        \item Prove to yourself the following is an equivalent system of equations
+        \[ 2x -y - z = 1  \]
+        \[0x + y-z = 1  \]
+        \[ x+y+z = 3  \]
+        \item Math is really just a formal method of communication. Try to find a simpler way to communicate the above equation. Once you've developed your own "language", solve this same system of equations.\\
+        Hint: Man it's really annoying to keep writing out those variables!
+    \end{enumerate}
+    
+    \item Variables deserve freedom
+    \begin{enumerate}
+        \item Consider the following system of linear equations in 3 dimensional space, where the x,y axis forms a plane parallel to the floor, and the z axis is perpendicular to them. For each given equation, try drawing the set of points that satisfy the equation.
+        \[ x + y + z = 2  \]
+        \[ y - z = 1  \]
+        \item Now find the set of solutions that satisfy both equations. Geometrically, what do you notice about the set of solutions to both equations as opposed to the set of solutions for each individual equation?
+        \item Notice how many variables there are and how many equations there are. Do you think there is a relationship between this and the geometry of the solution space?
+        \item Describe the possible geometries of solutions when the number of variables $>$ number of equations, number of variables = number of equations, and number of equations $<$ number of variables. Give examples for each case. Try to stay at least in 3D space i.e. 3 variables.
+    \end{enumerate}
+  \end{enumerate}  
+
+\section{Applied}
+\begin{enumerate}
+
+    \item Visualization\\
+    \begin{enumerate}
+        \item There is an important function in statistics defined as the following:
+            \[ f(x;\mu,\sigma) = \frac{1}{\sqrt{\sigma * 2\pi}}*e^{\frac{(x-\mu)^2}{2\sigma^2}}  \]
+            Verbally, this is the function f of x, parameterized by $\mu$,$\sigma$. Consider the  $\mu$,$\sigma$ as constants. (p.s. $\pi$ is a constant too)
+            \begin{enumerate}
+                \item What is the domain of this function?
+                \item What is the range of this function?
+                \item What are the major terms of this equation? If you had to simplify this equation so only the major mathematical operators remained, what would it be? (Hint: there should only be 3)
+                \item Is there any symmetry to this function? Hint: Don't think too hard, just try plugging in different values of x and imagining what would happen (Hint: consider x relative to $\mu$)
+                \item What happens as we change $\mu$?
+                \item What happens as we change $\sigma$?
+            \end{enumerate}
+        \item There is an important function in physics defined as the following
+         \[ f(x;T) = 4\pi x^2  (\frac{m}{2\pi k_B T})^{\frac{3}{2}}*e^{\frac{-m x^2}{2k_B T}} \]
+         Consider m, $k_B$,T as constants
+            \begin{enumerate}
+                \item What is the domain of this function?
+                \item What is the range of this function?
+                \item What are the major terms of this equation? If you had to simplify this equation so only the major mathematical operators remained, what would it be? (Hint: there should only be 3)\\
+                Hint: what is a constant multiplied by another constant?
+                \item What happens as we change T?
+                \item What happens as we change m?
+            \end{enumerate}
+    \end{enumerate}
+        
+    \item Hot Gas\\
+    This problem is actually a real-life problem I ran into when working in a research lab when I was a rising senior in high school.\\ 
+    Consider the ideal gas law, given as 
+    \[ PV = nRT \]
+    where P is pressure, V is volume, R is a constant, T is temperature(in units of Kelvin), and n is moles(consider this as number of particles)\\
+    Suppose we have a long, cylindrical pipe that is 1 meter long with a 1 cm radius. This pipe is heated to a temperature of 973 Kelvin.\\
+    We are flowing a gas through this heated pipe at a rate of 5 Liters/second. But of course, this flow rate is measured at ambient temperature, which is 300 Kelvin. \\
+    \newline
+    How long will it take for a single particle to flow through this pipe? Assume the pressure at room temperature and inside the pipe is 1\\
+    \newline
+    Hint1: There are two separate temperatures to consider here. Consider what you want to solve for and what you know at each temperature state. \\
+    Hint2: Don't forget to pay attention to units!
+    
+    \item Rain Power\\
+    Emilie is an environmentally friendly youth who likes to asks questions. One day, she wondered if it would be possible to convert the falling rain water into energy.
+    \begin{enumerate}
+        \item First, she does some research and finds that the average precipitation in Richmond,VA is about 110 cm every year. Assuming a flat rooftop with a square area of 140 $m^2$, what is the volume(liters) of rainfall on average each year?\\
+        \item Assuming the average height of a building is 10 meters, how much energy is "stored" over the course of the year(final units will be in joules)?        For reference, a computer that is in use for the entire day will consume roughly 4800 Joules. \\
+        Hint: energy stored is equal to mass(kg) * 9.8 * height(meters)\\
+
+        \item Although she was proud of her calculations, Emilie found out that the average household consumes 900kWh per  month(3329 * $10^6$ Joules is roughly 1kWh, the standard unit of measurement for residential electricity use). But she didn't give up easily! She wanted to find out how much money a "rainwater generator" could save a family each year. Given that 1kWh costs 12 cents, calculate how much money would be saved by such a rainwater generator each year.
+        \item Even though the numbers still weren't looking good, Emilie knew that the numbers used here were just averages. Find a formula that determines how much money would be saved by a theoretical "rainwater generator" given the following variables: building height(m), rainfall per year(m/year), price per kWh(cents / kWh), building rooftop area($m^2$). Include all necessary unit conversions in the formula.
+        \item The highest average residential electricity price in the U.S. is 18 cents per kWh in New York. Suppose we have a large Facebook data center in New York that has a rooftop area of 2000 $m^2$ and is 20m tall. Average rainfall is 115 cm per year.
+        \item While investigating Facebook data centers, Emilie discovers that a major source of energy consumption for data centers is cooling. It turns out that energy isn't only stored gravitationally i.e. when we move drop something from a certain height, it can also be stored chemically, in the bonds of water molecules themselves!\\
+        The amount of energy stored in liquid water is as follows:
+        \[ Q = mc \Delta T\]
+        where m is mass in kg, c is a constant of value 4180, and $\Delta$T is the change in temperature.\\
+        Running millions of servers generates heat, which can lead to performance issues for computers. We can use evaporative cooling to transfer the generated heat into water, thus cooling the servers. Using the same assumptions as above, and that the rainwater temperature is 13 degrees Celsius, calculate the total amount of heat energy that could be pulled away from the heat servers using rain water every year, assuming the water is heated to 99 degrees Celsius. The units of heat are also Joules; calculate how much money is saved assuming the same price of electricity. 
+    \end{enumerate}
+    
+
+
+\end{enumerate}
+\section{Pure}
+\begin{enumerate}
+
+    \item Squares and Primes\\
+    Inspired by a CS interview question I heard recently.
+    \begin{enumerate}
+        \item Write down the square of 0,1,2,...,9,10
+        \item Find the prime factors of all of these squares
+        \item What interesting property do you note about these prime factors of squares? Does it make sense why they exhibit this property?
+        \item Are these the only numbers that exhibit this property?
+    \end{enumerate}
+    
+    \item Triangle Sum (taken from Polya, How to Solve It, Problems pg 235)
+        \[ 1 = 1  \]
+        \[ 3 + 5 = 8 \]
+        \[ 7 + 9 + 11 = 27  \]
+        \[ 13 + 15 + 17 + 19 = 64  \]
+        Express the pattern mathematically in terms of the $i^{th}$ layer of this triangle, where i = 0 for the first row. Prove that this pattern is true.
+
+    \item Summations
+    \begin{enumerate}
+        \item For the following problems, solve symbolically and numerically(find the actual answer with a number, then give a general formula)\\
+        \[ \sum\limits_{i=1}^n i =1 + 2 + .... + n \]
+        \item Consider the following function\\
+        \[f(n) = 1 + 2 + 4 + 8 + ... + n \]
+        Is this function smaller or larger than the following equation? Give a proof \\
+        \[g(n) = n^2 \]
+        \item When is this function larger than the following function. When is it smaller?\\
+        \[g(n) = \frac{n^2}{16} \]
+        \item Does this function grow linearly? Consider carefully what it means for a function to be linear. If you're stuck, consider when the above function is larger and when it is smaller than the following function, in both the limited rational case and as n approaches $\infty$\\
+        \[g(n) = 100n \]
+        \item Express this function recursively. Specifically, describe the function f(n) in terms of n and f only
+    \end{enumerate}
+    
+\end{enumerate}
+\section{Mental Math Mania}
+All of these should be done in your head. All should take less than 5 seconds. No writing allowed.
+\begin{enumerate}
+    \item Mentally Multiplicative Multiples\\
+    
+    \begin{enumerate}
+        \item What is 12 x 12 ?
+        \item What is 12 x 13?
+        \item How can you easily find 13 x 13?\\
+        Now use the same above trick to solve these next problems!
+        \item $21^2$
+        \item What is 25 x 25?
+        \item Now quickly solve for $24^2$
+        \item Given $n^2$, how would you find $(n+1)^2$(don't just do the polynomial expansion, consider what it actually means)
+    \end{enumerate}
+    
+    \item Approximating Numbers
+    \begin{enumerate}
+        \item Give an approximation for 502 * 519
+        \item Give an approximation for $52^2$
+        \item Give an approximation for 365 * 24
+    \end{enumerate}
+    
+
+    \item Unraveling DNA (approximately)\\
+    Paper is allowed, but you shouldn't be doing long multiplication. Only use to write down numbers and units. No calculators. Approximate whenever possible.\\
+    Inspired by a conversation with John Blue when I was a senior in high school.
+    \begin{enumerate}
+        \item The human genome is composed of roughly 3 * $10^9$ base pairs(base pairs are pairs C-G and A-T pairs). The human DNA is shaped in a double helix spiral. When fully unraveled, each 360 degree turn of this helix spiral has 10.5 base pairs. The DNA helix grows 3.4 nanometers($10^-9$ meters) every 360 degree turn. Given this information, roughly how long is the human DNA when fully stretched out?
+        \item There are roughly 37 trillion ($10^12$) cells in the human body, each one containing the entire copy of DNA. The distance from the earth to the sun is 150 million kilometers. If we stretched out all the DNA in 1 human, would we get close to the sun? For some more reference, the solar system is roughly 7.5 billion kilometers. 
+        \item There are roughly 7.5 billion humans on this earth. If we stretched out the DNA in every cell of every human, how far would it extend?
+        \item Lets try to compare this relative to the size of the milky way galaxy. The milky way galaxy is 100,000 light years long. A light year is how far light can travel in a year(obviously assuming it doesn't run into anything). The speed of light is 3 * $10^6$ kilometers per second. Roughly how long is the milky way galaxy? How does this compare to the answer from the previous question?
+        \item Wow, DNA is really long! Now, lets try to make a black hole! First, we need to figure out the mass of DNA. 6.022 * $10^23$ base pairs weight 650 grams. How much does all the DNA in a human weigh(summing over all the cells)?
+        \item Now figure out the mass of the DNA in each cell in each human on earth.
+        \indent Sanity Check: Find the mass of all humans on earth. We should expect that this number is much larger than mass of all DNA. If it isn't', we've definitely messed up.
+        \item The Schwarzchild Radius is a measure of how small something would need to be compressed to form a black hole and is given by
+        \[ R_s = \frac{2*G*M}{c^2}  \]
+        where G is a constant 6.674*$10^-11$, c is the speed of light in m/s, m is mass. Find the Schwarzchild Radius for all the human DNA.
+    \end{enumerate}
+
+\section{Reading}
+\href{https://docs.google.com/viewer?url=https\%3A\%2F\%2Fcs.brynmawr.edu\%2FCourses\%2Fcs231\%2Ffall2013\%2Flecs\%2Ferdos.pdf}{Pure: A short article on Erdos}\\
+Hoffman, P., "The Man Who Loves Only Numbers", The Atlantic Monthly, 1967.\\
+\href{https://www.quantamagazine.org/math-and-science-teachers-pencils-down-20161011/}{Applied: Teaching in Math and Science}\\
+Lin, T., et. al, The Art of Teaching Math and Science, Quanta Magazine, 2016.\\
+
+
+\end{enumerate}
+
+
+\end{document}

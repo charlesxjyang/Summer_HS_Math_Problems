@@ -1,0 +1,253 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  A Math Filled Summer! \\
+  \large Part 3}
+\author{Charles Yang }
+\date{June 2018}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{comment}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\begin{document}
+
+\maketitle
+\begin{center}
+    \section*{Unit References and Conversions}
+    $10^{12}$ = trillion\\
+    $10^9$ = billion\\
+    $10^6$ = million\\
+    $10^3$ = thousand(k)\\
+    $10^{-2}$ = centi (c)\\
+    $10^{-3}$ = milli (m)\\
+    $10^{-6}$ = micro ($\mu$)\\
+    $10^{-9}$ = nano (n)\\
+    1000L of water = 1 $m^3$\\
+    1L of water = 1 kg\\
+    
+    
+    \section*{Problem-Solving Philosophy}
+    Immerse in the known\\
+    Ponder the unknown\\
+    Expand into the bounds\\
+    A symbol is better than a number\\
+    An exact number is better than an approximate number\\
+    An approximate number is better than nothing\\
+    Sanity checks are for the sane\\
+    
+    
+\end{center}
+
+\newpage
+
+
+\section{Calculus}
+\begin{enumerate}
+    \item Food for Thought
+    \begin{enumerate}
+        \item Define speed with a formula (consider the units)
+        \item How would a car measure it's "speed at time t". What does it mean to have a speed at a specific time?
+        \item Consider a boat traveling round trip from Florida to Puerto Rico and back. Suppose it reaches Puerto Rico and immediately turns around and heads to Florida. It travels with the same speed s during both parts of the trip. Did the boat at any point in time have a speed of 0? When?
+    \end{enumerate}
+
+    \item Physical Intuition
+    \begin{enumerate}
+        \item Suppose we have a function x(t), where t is time and x(t) is the distance traveled at time t. Let x(t) = at + b. Draw a graph for any values of a,b. What is the velocity symbolically at any time t? What is the velocity graphically?
+        \item What are the units of a,b,t, and x(t)?
+        \item Suppose we have a function v(t), where t is time and v(t) is the velocity at time t. Graph v(t) as a straight line, v(t) = a. What is the total distance traveled at any time t? Find a symbolic and graphical explanation.
+        \item Suppose x(t) = $t^2$. What is the velocity at any given time?
+    \end{enumerate}
+    
+    \item Numerical Approximation
+    \begin{enumerate}
+        \item Suppose you are given the following table of distance traveled at various times. How would you approximate the speed at time 1.4 seconds?
+        \begin{center}
+            \begin{tabular}{ c c c c c c}
+             Time(sec)        & 0.45  &   1   & 1.4  & 2.1  & 2.4\\ 
+             Distance(meters) & 0.5   &  0.9  &  1.2 & 1.99 & 2.3\\  
+            \end{tabular}
+        \end{center}
+        \item How would you approximate the time at 1.7 seconds? Justify your method
+        \item Suppose we have a femtosecond laser(a laser that shoots really fast) that measures how far we have traveled. For all purposes, we have a table of infinite precision of how far we have traveled at each second. How would you approximate our speed at any given time interval now?
+        \item Consider if we plotted a graph of the above table with time on the x axis and distance traveled on the y-axis. Translate what we found physically into mathematical terms.
+        \item Given the above numerical procedure, try to derive a formula for the velocity, given a continuously defined function v(t)
+    \end{enumerate}
+
+    \item Cross Country Road Trip\\
+    Ben, Nathan, Will, Corban are racing on a cross country road trip to see who can cross the continental U.S. in the shortest time. Their speed as a function of time is given below. Assume each takes the same path.
+    \begin{align*}
+    \text{Ben} && v(t)=100\\
+    \text{Nathan} && v(t) = 10t\\
+    \text{Will} && v(t) = \begin{cases} 
+      0 & t= 0 \\
+      200 & 0 < t\leq 1 \\
+      7t & t > 1 
+      \end{cases}\\
+     \text{Nathan} && v(t) = 2t^2 + 3t - 10\\
+    \end{align*}
+    \begin{enumerate}
+        \item Plot all of their respective velocities as a function of time
+        \item How far will each person have traveled by t=2? t=5?
+        \item Plot all of their respective distances traveled as a function of time
+        \item What geometrical intuition can you give about plotting velocity to plotting distance?
+    \end{enumerate}
+
+\end{enumerate}
+
+
+\section{Applied}
+\begin{enumerate}
+
+    \item Visualization
+    \begin{enumerate}
+        \item Consider the following 3D function
+        \[ z = f(x,y) = x^2 + y^2\]
+        You can visualize this function in 3D as x,y parallel to the ground and the output of the function, z, as the height.
+        \begin{enumerate}
+            \item What is the domain of this function?
+            \item What is the range of this function?
+            \item Is this function symmetric?
+            \item What is the minimum of this function i.e. smallest output? For which (x,y) pairs does this occur?
+            \item Describe how the given function relates to the function g geometrically
+            \[ g(x) = x^2\]
+        \end{enumerate}
+    \end{enumerate}
+    
+    \item Gas Guzzlers
+    \begin{enumerate}
+        \item Describe a formula for the \textit{total price} of a fill up for a car with some  \textit{volume} gas tank and some  \textit{price} of fuel in dollars per unit volume
+        \item Describe a formula for total miles a car can travel on a full tank of gas, using the above variables and the \textit{fuel efficiency} in units of unit distance per unit volume
+        \item Suppose you have 4 cars with the following mile-per-gallon(mpg) performance: 5mpg, 15mpg, 25mpg, and 50mpg. How many gallons will each consume after traveling 100 miles? Plot the relationship between mpg and gallons consumed after 100 miles. What type of function is this?
+        \item Carefully consider what information mpg is designed to convey to the customer. What metric do we really care about? Is mpg a well-designed metric? Tread carefully - you've just discovered how simple, yet subtle, mathematics can greatly affect public perception and public policy. If only we had informed leaders who understood these nuances!
+        \item What would be a better metric to use instead of mpg? Why?
+        \item Notice in the previous question we had 4 different cars with varying mpgs. Use your new metric to rank their performance. What do you notice? What implications does this have for carbon emissions in the automobile industry? And be careful, you've discovered a secret that many automobile companies try to cover up!\\
+        If you're still interested, take a peek at this \href{https://www.washingtonpost.com/news/wonk/wp/2013/06/06/want-to-boost-fuel-economy-stop-thinking-about-miles-per-gallon/?noredirect=on&utm_term=.0db47fa5ed5b}{link} or \href{https://nudges.wordpress.com/why-we-misunderstand-what-miles-per-gallon-ratings-are-telling-us/}{this one}.
+    \end{enumerate}
+    
+    \item Go!\\
+    Note: The board game descriptions here are simplifications\\
+    The board game is believed to be one of the oldest continuously played board games in history. One of the reasons Go has endured for so long is its simplicity. At a very basic level, the board is a square grid of vertices. There are two players and each player takes turns placing a stone at a vertex. Once a stone is placed a vertex, it cannot be moved nor can another stone be placed at that vertex.\\ Obviously there is much more nuance, but for our purposes, this is the only understanding we will need. For the purposes of this question, assume the game ends after a win-condition is reached, rather than a player quitting, not showing up, etc. We use the term turn to mean a player moves and the term move to define player 1 moving once then player 2 moving once\\
+    Recently, researchers at Google presented a machine learning algorithm,  \href{https://deepmind.com/blog/alphago-zero-learning-scratch/}{AlphaGo Zero}, which easily defeated some of the best human Go players in the world last year. Let's see why Go has been such a difficult game for AI and why this result is so impressive.
+    \begin{enumerate}
+        \item The smaller boards in Go have 13x13 size. Calculate the number of possible moves at the very first turn i.e. Player 1's turn.
+        \item After the first move, a stone is placed at any vertex. Calculate the number of possible moves at the second turn i.e. Player 2's turn.
+        \item Assuming the game ends when there are no more vertices left, \textbf{write out but do not calculate} how many possible turns there are for the entire game.
+        \item How big do you think the above number is? A million? A billion? Try to use approximations to get a rough order of magnitude understanding
+        \item A normal size board in Go is 19x19 size. \textbf{Write out but do not calculate} the total number of possible turns now. How much bigger do you think this is than for the 13x13 size board?
+        \item Try to calculate the total number of turns for a 13x13 and 19x19 board. It should not be possible on any regular calculator.
+        \item Given that I have not told you the actual strategy or win-condition of this game, do you think that we have given an underestimate or overestimate of the number of moves that would \textbf{normally occur} in a game of Go?
+        \item Let's compare the number of possible moves in Go to chess, a game that computers have solved decades earlier. A chess board is 8x8 and has 32 pieces on the board. During each players turn, they move the one piece to a different square. Assume each piece can move to any open square and that no pieces are ever removed. How many open squares should there be at any point in the game?
+        \item Calculate how many moves we would need to make on such a board game as specified as above until there were as many possible turns as in Go for both the 13x13 and 19x19 board.
+        \item Now in chess, pieces on the board are actually removed and in many cases, games end with 5 or fewer pieces. Given this new information, do you think any estimate using 32 pieces on the board that assumes pieces are never removed will be an overestimate or underestimate of the actual number of possible turns?
+        \item The longest chess game was \href{https://en.wikipedia.org/wiki/List_of_world_records_in_chess#Longest_game}{264 moves} i.e. player 1 moved 264 times and player 2 moved 264 times. It is theoretically possible to take a piece off the board after move 2 i.e. after player 1 moves once and player 2 moves once. Given this information, write out a procedure that will give the tightest or best possible estimate of the total number of possible turns in a game of chess.
+        \item How does this new answer compare to the number of possible moves in Go?
+    \end{enumerate}
+    
+    
+    \item Approximating Life
+    \begin{enumerate}
+        \item Charles eats roughly 2 granola bars everyday. Each box of 12 granola bars costs \$4.50. How much does he spend on granola bars over the summer?
+        \item The perimeter of the United States is 8878 miles. The length of the United States (east to west) is 2680 miles while the width/height (north to south) is 1590 miles. The cost of gasoline is \$2.9 dollars per gallon. Suppose we take a road trip in a 25 mile-per-gallon car starting from virginia to california and back (assume the path taken is unknown i.e. do not asssume straight line path). 
+        \begin{enumerate}
+            \item Give 3 different methods of approximating the cost of this trip. For each method, find the cost and justify the method, as well as potential drawbacks.
+            \item Which method is the most accurate answer?
+        \end{enumerate} 
+    \end{enumerate}
+    
+\end{enumerate}
+
+\section{Pure}
+\begin{enumerate}
+    \item Squares in Circles in Triangles\\
+    Note: I actually haven't done these problems, so I don't know what's going to happen, but I feel like there might be some cool stuff.
+    \begin{enumerate}
+        \item Consider a circle of radius r. Circumscribe a square a1 around the circle i.e. the circle should be completely within the square. Inscribe a square a1 inside the circle i.e. the circle should be completely within the square.
+        \begin{enumerate}
+            \item Find the area of a1 and a2
+            \item Find the perimeter of a1 and a2
+            \item Compare the ratio of the perimeters and area
+        \end{enumerate}
+        \item Consider a square of side length s. Circumscribe a circle 1around the square and inscribe a circle a2 inside the square.
+        \begin{enumerate}
+            \item Find the circumference of a1,a2
+            \item Find the area of a1,a2
+            \item Compare the ratio of the circumference and area
+        \end{enumerate}
+        \item Consider a sphere of radius r. Circumscribe a cube a1 around the sphere and inscribe a cube a2 inside the sphere.
+        \begin{enumerate}
+            \item Find the surface area of a1 and a2
+            \item Find the volume of a1 and a2
+            \item Compare the ratio of the perimeters and area
+        \end{enumerate}
+        \item Consider a cube of side length s. Circumscribe a sphere a1 around the cube and inscribe a sphere a2 inside the cube.
+        \begin{enumerate}
+            \item Find the surface area of a1 and a2
+            \item Find the volume of a1 and a2
+            \item Compare the ratio of the perimeters and area
+        \end{enumerate}
+        \item Consider a circle of radius r, centered at the origin. Construct a right triangle, with a base lying on the positive x-axis with a length of r and a height of r. 
+        \begin{enumerate}
+            \item Find the area of the triangle
+            \item Find the area of the quarter-circle in the positive x,y axis quadrant
+        \end{enumerate}
+     
+     \item Divisors and Dividing (Challenge Problem)\\
+     A number is divisible by 3 if and only if the sum of the digits of the number is divisible by 3. Confirm this is true for yourself. Make sure to check both cases where a number is divisble by 3 and cases where it is not. Then prove that is true.\\
+     Hint 1: 12345 = 1 * 10000 + 2 * 1000 + 3 *100 + 4 * 10 + 5\\
+     Hint 2: 10 = 3 * 3 + 1
+        
+
+    \end{enumerate}
+\end{enumerate}
+
+
+\section{Reading}
+
+\href{https://www.quantamagazine.org/mathematicians-discover-prime-conspiracy-20160313/}{Pure: Prime Conspiracy}\\
+Klarreich, E., Mathematicians Discover Prime Conspiracy, Quanta Magazine, 2016.\\
+
+\href{https://www.quantamagazine.org/hyperuniformity-found-in-birds-math-and-physics-20160712/}{Applied: Hyperuniformity in nature}\\
+Wolchover, N., A Bird’s-Eye View of Nature’s Hidden Order, Quanta Magazine, 2016.\\
+
+
+\section{Alphabet Soup Fun!}
+Ever wondered why we always assign variables to certain letters?
+Scared that people might laugh at you for using the wrong letter for your variable?
+Well your worries are no more, now that you have our handy dandy math alphabet soup table!\\
+
+\begin{center}
+    \section*{Math Alphabet Soup Table}
+    \begin{center}
+    \begin{tabular}{ c c}
+    a,b,c,d & constants\\
+    e & Euler's number\\
+    f,g,h & functions\\
+    i,j & imaginary numbers\\
+    i,j,k & counters, unit vectors\\
+    l & line,length\\
+    m,n & counters\\
+    o & not used, too similar to 0\\
+    p,q & lines or points\\
+    r & radius, sometimes distance\\
+    s & speed, free parameter\\
+    t & time, free parameter \\
+    u,v,w & vectors\\
+    x,y,z & variables\\
+    \end{tabular}
+    \end{center}
+    
+\end{center}
+
+\end{document}

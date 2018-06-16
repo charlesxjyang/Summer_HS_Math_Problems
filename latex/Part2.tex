@@ -1,0 +1,203 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+
+\title{%
+  A Math Filled Summer! \\
+  \large Part 2}
+\author{Charles Yang }
+\date{June 2018}
+\usepackage{amssymb,amsmath,amsthm,amsfonts}
+\usepackage{multicol,multirow}
+\usepackage{calc}
+\usepackage{ifthen}
+\usepackage{amssymb}
+\usepackage{indentfirst}
+\usepackage{comment}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\begin{document}
+
+\maketitle
+\begin{center}
+    \section*{Unit References and Conversions}
+    $10^{12}$ = trillion\\
+    $10^9$ = billion\\
+    $10^6$ = million\\
+    $10^3$ = thousand(k)\\
+    $10^{-2}$ = centi (c)\\
+    $10^{-3}$ = milli (m)\\
+    $10^{-6}$ = micro ($\mu$)\\
+    $10^{-9}$ = nano (n)\\
+    1000L of water = 1 $m^3$\\
+    1L of water = 1 kg\\
+    
+    
+    \section*{Problem-Solving Philosophy}
+    Immerse in the known\\
+    Ponder the unknown\\
+    Expand into the bounds\\
+    A symbol is better than a number\\
+    An exact number is better than an approximate number\\
+    An approximate number is better than nothing\\
+    Sanity checks are for the sane\\
+    
+    
+\end{center}
+
+\newpage
+
+\section{Linear Algebra}
+\begin{enumerate}
+    \item A real-valued vector is an ordered list of real numbers.
+    \[ \vec{x} = \begin{bmatrix}1 \\ 5 \\ -4 \\ 0\end{bmatrix}\]
+    We'll denote the first element as $\vec{x^{(0)}}$, which in this case would be 1, and the ith element as $\vec{x^{(i)}}$.\\
+    You might wonder why we start the index at 0; some people start at 0 and some at 1, depending on the situation. In CS, it is universally agreed that we index starting at 0, whereas in math there is a more even mix of the two.\\
+    Consider the following vector-valued function, which takes a vector as an input and returns a vector
+    \[ \vec{v} = f(\vec{x})\]
+    \[ \vec{v^{i}} = \frac{e^{\vec{x^{(i)}}}}{\sum\limits_{i=0}^{n-1} e^{\vec{x^{(i)}}}} \]
+    where n is the number of values in the vector. We sum from 0 to n-1 because of the 0 index i.e. if we have 3 elements, we sum from index 0 to index 2. \\
+    \begin{enumerate}
+        \item What is the domain of this function?
+        \item What is the range of this function?
+        \item What is the denominator doing?
+        \item What is the given function doing? Hint: you've definitely seen this operation before; try imagining the function with out exponentials\\
+        \newline
+        This function is widely used in machine learning classification problems!
+    \end{enumerate}
+    
+    
+\end{enumerate}
+
+
+\section{Applied}
+\begin{enumerate}
+    \item Visualization
+    \begin{enumerate}
+        \item One function that has been used in a wide variety of fields, most prominently right now in machine learning, is as follows:
+        \[ f(x;a,b) = \frac{a}{b+e^{-x}}\]
+        \begin{enumerate}
+            \item What is the domain of this function?
+            \item What is the range of this function?
+            \item What happens as x approaches very large negative values?
+            \item What happens as x approaches very large positive values?
+            \item What does this function look like for values of x around 0?
+            \item Is there any symmetry to this function? Hint: try and start simple with a,b = 1
+            \item What happens as we change a?
+            \item What happens as we change b?
+        \end{enumerate}
+        \item A Fourier series is widely used in mathematics and in the sciences to approximate more complex measurements. It follows the general form: 
+        \[ f(x) = \frac{1}{2} a_0 + \sum\limits_{i=1}^\infty a_n cos(nx) + \sum\limits_{i=1}^\infty b_n sin(nx)\]
+        where $a_0$,$a_1$,...$a_n$,$b_1$,$b_2$,....,$b_n$ are all independent real valued constants. 
+        \begin{enumerate}
+            \item What is the domain of this function?
+            \item What is the range of this function?
+            \item Can you imagine some form of the Fourier series where the following is true, where f(x) is the Fourier series?
+            \[ sin(x) = f(x)\]
+            \item The Fourier series is often used to approximate other, more complex functions. How is this possible, given that it only uses sin and cos operations? Are there any limitations to what functions the Fourier series can approximate?
+        \end{enumerate}
+    \end{enumerate}
+    \item Reducing CO2\\
+    This is based on a problem I did several weeks ago for my current research.\\
+    \newline
+    An exciting field of chemistry called catalysis is striving to convert the CO2 in our atmosphere to products such as plastics and even back into fuels. In particular, electrocatalysis, using electrically driven chemical catalysts, is one of the most promising routes. A \href{https://docs.google.com/viewer?url=http\%3A\%2F\%2Fwww.light.utoronto.ca\%2Fedit\%2Ffiles\%2F2018_-_science_-_co2_electroreduction_to_ethylene_via_hydroxide-mediated_copper_catalysts_at_an_abrupt_interface.pdf}{paper in Science Magazine} published in 2018 demonstrated state of the art results for CO2 conversion to ethylene, the precursor to polyethylene, a plastic found in many products today.\\ 
+    In an ideal system, we would like to have high concentrations of the product form once we make a single pass through the reactor system. If we have to recycle the gas multiple times through our reactor, then the efficiency will decrease over time as the gas stream has more product and less CO2. On the other hand, if we make one-pass through the reactor but have low product concentration, then it will be hard to separate product from CO2. This issue is one of the major reason's why such a system is not in place yet. Let's see how much farther science must progress\\
+    Suppose we have a long, thin, rectangular reactor system. The height is 10cm, the length is 1m, and the width is 10cm. The base area, with area 0.1$m^2$, is coated with the catalyst. CO2 gas is flowed in at a rate of 30mL/minute.(Hint: draw a diagram)\\
+    \begin{enumerate}
+        \item The current density through the catalyst is 250mA/$cm^2$. 1 Amp = 1Coulomb/second. 1 Coulomb = 96485 moles of electron. Consider moles as a way of counting objects e.g. I have one mole of electrons is like saying I have 2931 electrons. How many moles of electron are flowing through each $cm^2$ area every second?
+        \item Given that the efficiency of our system is 65\% i.e. only 65\% of the electrons are used to reduce CO2 to ethylene, and that you need 6 electrons to reduce one CO2 molecule to ethylene, how many moles of ethylene are we producing every minute? (Hint: look at all available information and their units)
+        \item Using the Ideal Gas Law, which is given below, find the volume of ethylene produced per minute.
+            \[ PV = nRT \]
+        where P is pressure with a value of 1, V is volume, n is moles of ethylene, R is the gas constant with a value 0.082057 and T is temperature with a value of 300. 
+        \item Now divide the volume of ethylene produced per minute by the volume of CO2 flowing through and you will see the ratio of ethylene produced to CO2.
+        \item If you think about it carefully, you'll notice a mistake in the previous question. Technically, CO2 is consumed to make ethylene, so in the final calculation, we should use in the denominator the volume of CO2 flowed in minus the volume of ethylene flowed in. Do you think using this will significantly change our result? Check your intuition by actually doing this.
+        \item Bonus: Technically we used volume of CO2 and ethylene. But we actually care about number of CO2 atoms to ethylene atoms. Are we justified in using volume? Consider the implications of the Ideal Gas Law and what constants hold true for this situation.
+        \item Bonus 2: Consider the dimensions of the reactor system given in the problem. Can you think of how to change the dimensions of the reactor system to have a higher yield of CO2?
+        \newline
+        \newline
+        \end{enumerate}
+        
+    \item Crazy Karambola
+    \begin{enumerate}
+        \item  With the health crazy sweeping upper-middle class suburban America, Starbucks has introduced a new drink, the Crazy Karambola. You order one at your local Starbucks Cafe and since notice the cute bartender making your drink. Here's how she mixes the drink:
+        \begin{enumerate}
+            \item There are two cups, cup A and cup B, each with 1 liter capacity. A juice A and juice B are added in equal portions to cup A, while juice C and water are added in equal portions to cup B. Both cups are evenly mixed.
+            \item The contents of cup A and cup B are poured into a larger cup, evenly mixed, and then equal portions of the resulting mixture are poured back into cup A and cup B, such that the amount in each cup is identical, 1 Liter.
+            \item cup B is heated and you notice that 50\% of all juice B in cup B is turned into juice A
+            \item Half of cup A is poured down the sink. Water is then poured into cup A such that cup A is filled to the same original volume
+            \item cup A is then strained through a filter that removes all of juice A from the mixture. (Note that the volume of cup A is now reduced because juice A is removed)
+            \item Apparently the cute bartender is thirsty at this point and drinks a quarter of cup B. She then pours 250mL of cup B and half of the remaining mixture in cup A and serves it to you.
+        \end{enumerate}
+        How much of each juice is in your drink?
+
+        
+    \end{enumerate}
+    
+    \item Deriving Tex-six Hold'em\\
+    Note: I've changed it to 6 cards because you could easily google the answer for normal texas hold em\\
+    Note 2: Some pretty tricky probability required. Think each one through carefully\\
+    In the game of Tex-six hold em, you are given 6 cards. There are different combinations of cards, called hands, that will allow you to win. There is a ranking of different hands and whoever has the highest ranked hand will win. Assume our card deck has 52 cards with 4 colors and 13 numbers.
+    \begin{enumerate}
+        \item The lowest ranked hand is having exactly one pair of the same number card. Find the probability of getting this hand.
+        \item The next lowest ranked hand is having exactly two pairs, where the two pairs are different from each other. Find the probability of getting this hand.
+        \item The 3rd lowest ranked hand is having a triple, with 3 cards of the exact same number. Find the probability of getting this hand.
+        \item The 4th lowest ranked hand is getting 3 different pairs, where each pair is different from the others. Find the probability of getting this hand.
+        \item The next lowest ranked hand is getting a straight, which is 4 continuously increasing sequence of numbers, not all the same suit. Find the probability.
+        \item, Finally, the highest ranked hand in our game of Tex-six hold em is the flush, which is 5 cards of the same suit, in any order
+        \item You would expect that the rankings of the hands would match the probabilities. Do they? If not, suggest a better ranking method.
+    \end{enumerate}
+\end{enumerate}
+
+\section{Pure}
+\begin{enumerate}
+    
+    \item Even-handed oddballs
+    \begin{enumerate}
+        \item Give a definition of an even number
+        \item Give a definition of an even number using prime factors
+        \item Give a definition of an odd number
+        \item Give a definition of an odd number using prime factors
+        \item Try and explain why all the natural numbers must be either even or odd.
+        \item Try and explain why the number of even numbers equals the number of odd numbers
+        \item Explain why an even number added to an even number is always even
+        \item Explain why an odd number added to an odd number is even (Hint: express an odd number in terms of an even number)
+        \item Explain why an odd number added to an even number is odd
+        \item Explain why an even number multiplied by an even number is an even number
+        \item Explain why an odd number multiplied by an odd number is an odd number
+        \item Explain why an odd number multiplied by an even number is an even number
+        \item Explain why an odd number raised to any power is an odd number
+        \item Explain why an even number raised to any power is an even number
+        \item Challenge Question: Prove that the number of even numbers equals the number of natural numbers. Hint: start by trying to define a function that maps every natural number to an even number.
+    \end{enumerate}
+    
+    \item Squares, Roots, Decimals, Inverses
+    \begin{enumerate}
+        \item What is the square of 12? What is the square of 0.12? Notice they are not completely analogous. Why is this? (Hint: scientific notation may help)
+        \item What is the square root of 4? What is the square root of 0.25? Notice they are not completely analogous. Why is this?
+        \item Consider the sequence of natural numbers
+        \[ 1,2,3.....n-1,n\]
+        What is the difference between the ith number and the i+1th number? (Don't overthink, this is the warmup)
+        \item What is the percent change each pair of numbers? 
+        \item Consider the inverse of the sequence of natural numbers, also known as the harmonic series
+        \[ 1,\frac{1}{2},\frac{1}{3}....\frac{1}{n-1},\frac{1}{n}\]
+        What is the difference between each number?
+        \item What is the percent change between each pair of numbers?
+    \end{enumerate}
+    \item Odd-timus Prime\\
+    Try taking the sum of the first n odd numbers. Do this several times for different values of n. What pattern do you observe? Express the following observation with a formula. Does it make sense why this pattern occurs? Try and give a geometric argument for why this happens.
+
+\end{enumerate}
+\section{Reading}
+
+\href{https://opinionator.blogs.nytimes.com/2010/05/09/the-hilbert-hotel/}{Pure: Hilbert's Hotels and Infinity}\\
+Strogatz, S., The Hilbert Hotel, New York Times Times Opinion, 2010.\\
+
+\href{https://www.quantamagazine.org/the-math-behind-gerrymandering-and-wasted-votes-20171012/}{Applied: Gerrymandering}\\
+Honner,P., The Math Behind Gerrymandering and Wasted Votes, Quanta Magazine, 2017.\\
+
+\end{document}
