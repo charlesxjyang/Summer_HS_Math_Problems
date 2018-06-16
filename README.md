@@ -40,4 +40,6 @@ slight emphasis toward pure mathematics.
 A well-known short text on problem solving by Polya.
 3. [EdX](https://www.edx.org/course/subject/math): A Massive Open Online Course (MOOC) provider. Wide range of classes and subjects offered by
 an equally wide breadth of universities and institutions
+4. [MIT OCW](https://ocw.mit.edu/courses/mathematics/) MIT puts all of their classes online! A great resource, as long as you
+can find the class you're looking for and it has the video lectures and other resources uploaded.
 4. [Coursera](https://www.coursera.org/browse/math-and-logic): Another MOOC. Also great.
